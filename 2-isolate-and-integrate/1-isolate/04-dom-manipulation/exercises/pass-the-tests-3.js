@@ -14,18 +14,43 @@ console.log(divEl.nodeName + ' (before)', divEl.cloneNode(true));
 // --- write some code ---
 //  you want to create a 2x2 table with a, b, c, d in the squares
 
+const tdParams = ['a', 'b', 'c', 'd'];
+// tdParams.forEach((par) => {
+for (let i = 0; i < tdParams.length; i++) {
+  const tdElement = document.createElement('td');
+  tdElement.innerHTML = tdParams[i];
+  const index = (tdParams.length + 1) / 2;
+  if (i + 1 < index) {
+    divEl.querySelectorAll('tr')[0].appendChild(tdElement);
+  } else {
+    divEl.querySelectorAll('tr')[1].appendChild(tdElement);
+  }
+}
+
 // --- --- --- --- --- ---
 
 console.log(divEl.nodeName + ' (after)', divEl.cloneNode(true));
 
 const expectedInnerHTMLs = ['a', 'b', 'c', 'd'];
 for (let i = 0; i < 2; i++) {
-    for (let j = 0; j < 2; j++) {
-        const tbodyEL = divEl.children[0].children[0];
-        const trEl = tbodyEL.children[i];
-        const tdEl = trEl.children[j];
-        const actual = tdEl.innerHTML;
-        const expected = expectedInnerHTMLs.shift();
-        console.assert(actual === expected, `expected "${expected}"`);
-    }
+  for (let j = 0; j < 2; j++) {
+    const tbodyEL = divEl.children[0].children[0];
+    const trEl = tbodyEL.children[i];
+    const tdEl = trEl.children[j];
+    const actual = tdEl.innerHTML;
+    const expected = expectedInnerHTMLs.shift();
+    console.assert(actual === expected, `expected "${expected}"`);
+  }
 }
+// <table>
+//   <tbody>
+//     <tr>
+//       <td>Cell 1</td>
+//       <td>Cell 2</td>
+//     </tr>
+//     <tr>
+//       <td>Cell 3</td>
+//       <td>Cell 4</td>
+//     </tr>
+//   </tbody>
+// </table>

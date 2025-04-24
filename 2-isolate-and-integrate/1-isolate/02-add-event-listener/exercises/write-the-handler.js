@@ -1,14 +1,23 @@
 'use strict';
 
-// fill in the _s
+// fill in the gaps
 
 const buttonEl = document.createElement('button');
 buttonEl.innerHTML = 'are you honest?';
 console.log(buttonEl.nodeName, buttonEl.cloneNode(true));
 
 const truthTestHandler = () => {
-    // ask a user to confirm if they are honest
-    // let them know what you think of their answer
+  // ask a user to confirm if they are honest
+
+  const isHonest = confirm('Are you honest?');
+
+  // let them know what you think of their answer
+
+  if (isHonest) {
+    alert("I'm glad to hear it!");
+  } else {
+    alert("It's sad to know!");
+  }
 };
 
 buttonEl.addEventListener('click', truthTestHandler);

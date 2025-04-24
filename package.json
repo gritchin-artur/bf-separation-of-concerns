@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "jest",
-    "format": "prettier --write ./"
+    "format": "prettier --write ./",
+    "study": "study"
   },
   "license": "MIT",
   "bugs": {
