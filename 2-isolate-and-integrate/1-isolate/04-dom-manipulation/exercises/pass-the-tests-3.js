@@ -17,14 +17,14 @@ console.log(divEl.nodeName + ' (before)', divEl.cloneNode(true));
 const tdParams = ['a', 'b', 'c', 'd'];
 // tdParams.forEach((par) => {
 for (let i = 0; i < tdParams.length; i++) {
-  const tdElement = document.createElement('td');
-  tdElement.innerHTML = tdParams[i];
-  const index = (tdParams.length + 1) / 2;
-  if (i + 1 < index) {
-    divEl.querySelectorAll('tr')[0].appendChild(tdElement);
-  } else {
-    divEl.querySelectorAll('tr')[1].appendChild(tdElement);
-  }
+    const tdElement = document.createElement('td');
+    tdElement.innerHTML = tdParams[i];
+    const index = (tdParams.length + 1) / 2;
+    if (i + 1 < index) {
+        divEl.querySelectorAll('tr')[0].appendChild(tdElement);
+    } else {
+        divEl.querySelectorAll('tr')[1].appendChild(tdElement);
+    }
 }
 
 // --- --- --- --- --- ---
@@ -33,14 +33,14 @@ console.log(divEl.nodeName + ' (after)', divEl.cloneNode(true));
 
 const expectedInnerHTMLs = ['a', 'b', 'c', 'd'];
 for (let i = 0; i < 2; i++) {
-  for (let j = 0; j < 2; j++) {
-    const tbodyEL = divEl.children[0].children[0];
-    const trEl = tbodyEL.children[i];
-    const tdEl = trEl.children[j];
-    const actual = tdEl.innerHTML;
-    const expected = expectedInnerHTMLs.shift();
-    console.assert(actual === expected, `expected "${expected}"`);
-  }
+    for (let j = 0; j < 2; j++) {
+        const tbodyEL = divEl.children[0].children[0];
+        const trEl = tbodyEL.children[i];
+        const tdEl = trEl.children[j];
+        const actual = tdEl.innerHTML;
+        const expected = expectedInnerHTMLs.shift();
+        console.assert(actual === expected, `expected "${expected}"`);
+    }
 }
 // <table>
 //   <tbody>

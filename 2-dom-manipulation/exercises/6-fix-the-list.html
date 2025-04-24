@@ -1,96 +1,99 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+    <head>
+        <meta charset="utf-8" />
 
-    <title>fix the list</title>
-    <meta name="description" content="fix the list" />
+        <title>fix the list</title>
+        <meta name="description" content="fix the list" />
 
-    <link href="/lib/dom-manipulation/mocha/mocha.css" rel="stylesheet" />
-    <script src="/lib/dom-manipulation/mocha/mocha.js"></script>
-    <script src="/lib/dom-manipulation/assert.js"></script>
+        <link href="/lib/dom-manipulation/mocha/mocha.css" rel="stylesheet" />
+        <script src="/lib/dom-manipulation/mocha/mocha.js"></script>
+        <script src="/lib/dom-manipulation/assert.js"></script>
 
-    <script src="/lib/dom-manipulation/test-the-dom.js"></script>
+        <script src="/lib/dom-manipulation/test-the-dom.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-  </head>
+        <link rel="stylesheet" type="text/css" href="../style.css" />
+    </head>
 
-  <body>
-    <header>
-      <h2>fix the list</h2>
-    </header>
+    <body>
+        <header>
+            <h2>fix the list</h2>
+        </header>
 
-    <section class="things-to-study">
-      <div id="side to inspect" class="exercise-output">
-        <div id="expected">
-          <h1>a list of things</h1>
-          <ul>
-            <li>robots</li>
-            <li>solar systems</li>
-            <li>oil</li>
-          </ul>
-        </div>
+        <section class="things-to-study">
+            <div id="side to inspect" class="exercise-output">
+                <div id="expected">
+                    <h1>a list of things</h1>
+                    <ul>
+                        <li>robots</li>
+                        <li>solar systems</li>
+                        <li>oil</li>
+                    </ul>
+                </div>
 
-        <div id="actual">
-          <ol>
-            <li>robots</li>
-            <li>wrong wrong wrong wrong</li>
-            <li>oil</li>
-            <li>oil</li>
-          </ol>
-        </div>
+                <div id="actual">
+                    <ol>
+                        <li>robots</li>
+                        <li>wrong wrong wrong wrong</li>
+                        <li>oil</li>
+                        <li>oil</li>
+                    </ol>
+                </div>
 
-        <script id="dom-manipulation-script">
-          "use strict";
-        //   debugger;
+                <script id="dom-manipulation-script">
+                    'use strict';
+                    //   debugger;
 
-          const actualContainer = document.getElementById("actual");
-          const actualTitle = document.createElement("h1");
-          const ol = actualContainer.querySelector("ol");
+                    const actualContainer = document.getElementById('actual');
+                    const actualTitle = document.createElement('h1');
+                    const ol = actualContainer.querySelector('ol');
 
-          actualTitle.innerText = "a list of things";
+                    actualTitle.innerText = 'a list of things';
 
-          actualContainer.insertBefore(actualTitle, actualContainer.firstChild);
+                    actualContainer.insertBefore(
+                        actualTitle,
+                        actualContainer.firstChild,
+                    );
 
-          const actualEl = ol.getElementsByTagName("li")[1];
-          actualEl.innerText = "solar systems";
+                    const actualEl = ol.getElementsByTagName('li')[1];
+                    actualEl.innerText = 'solar systems';
 
-          const ul = document.createElement("ul");
+                    const ul = document.createElement('ul');
 
-          const numChildren = ol.children.length;
-          for (let i = 0; i < numChildren; i++) {
-            const nextChild = ol.children[i].cloneNode(true);
-            ul.appendChild(nextChild);
-          }
+                    const numChildren = ol.children.length;
+                    for (let i = 0; i < numChildren; i++) {
+                        const nextChild = ol.children[i].cloneNode(true);
+                        ul.appendChild(nextChild);
+                    }
 
-          actualContainer.replaceChild(ul, ol);
+                    actualContainer.replaceChild(ul, ol);
 
-             ul.removeChild(ul.lastChild);
-          // write me! (... without using cloneNode, that's kind of cheating)
-        </script>
-      </div>
+                    ul.removeChild(ul.lastChild);
+                    // write me! (... without using cloneNode, that's kind of cheating)
+                </script>
+            </div>
 
-      <div id="mocha" class="mocha-output"></div>
+            <div id="mocha" class="mocha-output"></div>
 
-      <script id="run the tests!">
-        mocha.setup({
-          ui: "bdd",
-        });
-        compareElements.attributesToTest = [
-          "nodeName",
-          "innerText",
-          "href",
-          "expected",
-          "children",
-          "childElementCount",
-        ];
-        compareElements(
-          document.getElementById("actual"),
-          document.getElementById("expected")
-        );
-        mocha.run();
-      </script>
-    </section>
-  </body>
+            <script id="run the tests!">
+                mocha.setup({
+                    ui: 'bdd',
+                });
+                compareElements.attributesToTest = [
+                    'nodeName',
+                    'innerText',
+                    'href',
+                    'expected',
+                    'children',
+                    'childElementCount',
+                ];
+                compareElements(
+                    document.getElementById('actual'),
+                    document.getElementById('expected'),
+                );
+                mocha.run();
+            </script>
+        </section>
+    </body>
 </html>

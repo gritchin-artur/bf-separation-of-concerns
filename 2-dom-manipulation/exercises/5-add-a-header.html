@@ -48,10 +48,14 @@
                     const actualTitle = document.createElement('h1');
                     actualTitle.innerText = 'a list of things';
 
-                    actualContainer.insertBefore(actualTitle, actualContainer.firstChild);
+                    actualContainer.insertBefore(
+                        actualTitle,
+                        actualContainer.firstChild,
+                    );
 
-                     const actualEl = actualContainer.getElementsByTagName('li')[1];
-                     actualEl.innerText = 'solar systems';
+                    const actualEl =
+                        actualContainer.getElementsByTagName('li')[1];
+                    actualEl.innerText = 'solar systems';
 
                     // write me! (... without using cloneNode, that's kind of cheating)
                 </script>
