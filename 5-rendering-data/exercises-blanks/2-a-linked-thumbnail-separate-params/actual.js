@@ -1,20 +1,20 @@
 'use strict';
 
 const actual = (color, url) => {
-  const divEl = document.createElement('div');
-  divEl.className = 'thumbnail-container';
+    const divEl = document.createElement('div');
+    divEl.className = 'thumbnail-container';
 
-  const aEl = document.createElement('a');
-  aEl.className = 'to-the-right';
-  aEl.target = '_blanc';
-  aEl.href = url;
-  divEl.appendChild(aEl);
+    const aEl = document.createElement('a');
+    aEl.className = 'to-the-right';
+    aEl.target = '_blanc';
+    aEl.href = url;
+    divEl.appendChild(aEl);
 
-  const imgEl = document.createElement('img');
-  imgEl.className = 'thumbnail';
-  imgEl.src = url;
-  imgEl.alt = `the color ${color}`;
-  aEl.appendChild(imgEl);
+    const imgEl = document.createElement('img');
+    imgEl.className = 'thumbnail';
+    imgEl.src = url;
+    imgEl.alt = `the color ${color}`;
+    aEl.appendChild(imgEl);
 
-  return divEl;
+    return divEl;
 };
