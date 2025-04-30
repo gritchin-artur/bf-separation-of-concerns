@@ -8,7 +8,35 @@
     </head>
 
     <body>
-        <div id="user-interface"></div>
+        <div id="user-interface">
+            <form id="form">
+                <div id="select-container">
+                    <label for="Emphasis">Emphasis</label>
+                    <select name="emphasis" id="emphasis">
+                        <option value="none">none</option>
+                        <option value="bold">BOLD</option>
+                        <option value="italic">italic</option>
+                    </select>
+
+                    <label for="Size">Size</label>
+                    <select name="size" id="size">
+                        <option value="small">small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">LARGE</option>
+                    </select>
+
+                    <label for="Color">Color</label>
+                    <select name="color" id="color">
+                        <option value="black">Black</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                        <option value="red">Red</option>
+                        <option value="white">White</option>
+                    </select>
+                </div>
+                <textarea name="display-text" id="display-text"></textarea>
+            </form>
+        </div>
         <script type="module" src="./src/init/index.js"></script>
     </body>
 </html>

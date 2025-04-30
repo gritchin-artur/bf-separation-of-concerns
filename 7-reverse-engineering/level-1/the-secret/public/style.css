@@ -12,3 +12,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-interface {
+    width: 90px;
+    height: 20px;
+    border: 1px solid black;
+}

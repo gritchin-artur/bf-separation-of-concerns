@@ -1,0 +1,26 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+#user-interface {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(4, 60px);
+    gap: 10px;
+    margin: 20px auto;
+    width: max-content;
+}
+
+.el {
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.el:hover {
+    background-color: #d0d0d0;
+}
